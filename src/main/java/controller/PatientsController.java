@@ -1,6 +1,7 @@
 package controller;
 
 import cl.praxis.ProyectoHospitalPostPandemia.ProyectoHospitalPostPandemiaApplication;
+import model.service.PatientService;
 import model.service.PatientServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PatientsController {
 
     private static final Logger LOG = LoggerFactory.getLogger(ProyectoHospitalPostPandemiaApplication.class);
-    private final PatientServiceImpl service;
+     PatientServiceImpl service;
 
     @Autowired
     public PatientsController(PatientServiceImpl service) {

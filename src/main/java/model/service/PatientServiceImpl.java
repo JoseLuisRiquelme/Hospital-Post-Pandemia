@@ -18,7 +18,7 @@ public class PatientServiceImpl implements PatientService{
     private List<Paciente> pacientes;
 
     public PatientServiceImpl() {
-        pacientes = new ArrayList<Paciente>();
+        pacientes = new ArrayList<>();
         pacientes.add(new Paciente(1,"Pepe","Ito","su casa","555"));
         pacientes.add(new Paciente(2,"Pluto","Niano","su casa","555"));
         pacientes.add(new Paciente(3,"Minie","Mouse","su casa","555"));
@@ -38,7 +38,7 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public Paciente getOne(int id) {
-        LOG.info("Called getOne():",id);
+        LOG.info("Called getOne():"+id);
         return pacientes
                 .stream()
                 .filter(p->p.getId()==id)
@@ -48,20 +48,30 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public boolean create(Paciente p) {
-        LOG.info("Called create() with patient 'p':",p);
+        LOG.info("Called create() with patient 'p': "+p);
         pacientes.add(p);
         return true;
     }
 
     @Override
     public boolean upDate(Paciente p) {
-        LOG.info("Called upDate() with patient 'p':",p);
-        return false;
+        LOG.info("Called upDate() with patient 'p': "+p);
+        Paciente pacienteUpDate = getOne(p.getId());
+        pacienteUpDate.setName(p.getName());
+        pacienteUpDate.setLastName(p.getLastName());
+        pacienteUpDate.setAddress(p.getAddress());
+        pacienteUpDate.setPhone(p.getPhone());
+        return true;
     }
 
     @Override
     public boolean delete(int id) {
-        LOG.info("Called delete() with  'id':",id);
+        LOG.info("Called delete() with  'id': "+id);
+        Paciente p = getOne(id);
+        if(p != null){
+            pacientes.remove(p);
+            return true;
+        }
         return false;
     }
 }
