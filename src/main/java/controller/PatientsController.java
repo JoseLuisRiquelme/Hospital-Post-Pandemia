@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pacientes")
+@RequestMapping("/pacientes.html")
 public class PatientsController {
 
     private static final Logger LOG = LoggerFactory.getLogger(ProyectoHospitalPostPandemiaApplication.class);
@@ -25,9 +25,9 @@ public class PatientsController {
     }
     @GetMapping
     public String verPacientes(Model model){
-        LOG.info("Executing getAll() 'pacientes'");
-     model.addAttribute("pacientes",service.getAll());
-        return "pacientes";
+        LOG.info("Executing getAll() 'pacientes.html'");
+     model.addAttribute("pacientes.html",service.getAll());
+        return "pacientes.html";
     }
     @GetMapping("/{id}")
     public String getOne(@PathVariable("id") int id, Model model){
