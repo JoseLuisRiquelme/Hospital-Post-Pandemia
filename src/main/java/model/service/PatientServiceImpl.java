@@ -1,5 +1,6 @@
 package model.service;
 
+import cl.praxis.ProyectoHospitalPostPandemia.ProyectoHospitalPostPandemiaApplication;
 import model.dto.Paciente;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class PatientServiceImpl implements PatientService{
 
-    private static final Logger LOG = LoggerFactory.getLogger(PatientServiceImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProyectoHospitalPostPandemiaApplication.class);
 
     private List<Paciente> pacientes;
 
