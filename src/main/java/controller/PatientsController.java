@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-@RequestMapping("/pacientes.html")
+/*@Controller
+@RequestMapping("/pacientes")
 public class PatientsController {
 
     private static final Logger LOG = LoggerFactory.getLogger(ProyectoHospitalPostPandemiaApplication.class);
-     PatientServiceImpl service;
+    private PatientServiceImpl service;
 
     @Autowired
     public PatientsController(PatientServiceImpl service) {
         this.service = service;
     }
-    @GetMapping
+    @GetMapping()
     public String verPacientes(Model model){
-        LOG.info("Executing getAll() 'pacientes.html'");
-     model.addAttribute("pacientes.html",service.getAll());
-        return "pacientes.html";
+        LOG.info("Executing getAll() 'pacientes'");
+     model.addAttribute("pacientes",service.getAll());
+        return "pacientes";
     }
     @GetMapping("/{id}")
     public String getOne(@PathVariable("id") int id, Model model){
@@ -36,4 +36,4 @@ public class PatientsController {
         return "detallesPaciente";
     }
 
-}
+}*/
