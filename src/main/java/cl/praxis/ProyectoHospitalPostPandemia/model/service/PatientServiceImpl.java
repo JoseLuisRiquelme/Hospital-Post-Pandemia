@@ -58,11 +58,12 @@ public class PatientServiceImpl implements PatientService{
     public boolean upDate(Paciente p) {
         LOG.info("Called upDate() with patient 'p': "+p);
         Paciente pacienteUpDate = getOne(p.getId());
+        pacienteUpDate.setId(p.getId());
         pacienteUpDate.setName(p.getName());
         pacienteUpDate.setLastName(p.getLastName());
         pacienteUpDate.setAddress(p.getAddress());
         pacienteUpDate.setPhone(p.getPhone());
-        pacienteUpDate.setImage(p.getPhone());
+        pacienteUpDate.setImage(p.getImage());
         return true;
     }
 

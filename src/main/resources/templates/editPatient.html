@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Paciente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div th:replace="~{menu::navega}"></div>
+    <h1 th:text="'Editar los datos del paciente'"></h1>
+    <form class="form" method="post" th:action="@{/pacientes}" th:object="${patient}">
+        <input type="hidden" id="id" name="id" th:value="${patient.getId()}">
+        <div class="mb-3">
+            <label for="name" class="for-label">Nombre</label>
+            <input id="name" name="name" class="form-control" th:value="${patient.getName()}">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="for-label">Apellido</label>
+            <input id="lastName" name="lastName" class="form-control" th:value="${patient.getLastName()}">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="for-label">Direccion</label>
+            <input id="address" name="address" class="form-control" th:value="${patient.getAddress()}">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="for-label">Telefono</label>
+            <input id="phone" name="phone" class="form-control" th:value="${patient.getPhone()}">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="for-label">Fotografia</label>
+            <input id="image" name="image" class="form-control" th:value="${patient.getImage()}">
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+            <div class="col-3">
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
