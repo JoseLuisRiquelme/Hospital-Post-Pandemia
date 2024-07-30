@@ -1,4 +1,4 @@
-package model.dto;
+package cl.praxis.ProyectoHospitalPostPandemia.model.dto;
 
 public class Paciente {
 
@@ -7,16 +7,18 @@ public class Paciente {
     private String lastName;
     private String address;
     private String phone;
+    private String image;
 
     public Paciente() {
     }
 
-    public Paciente(int id, String name, String lastName, String address, String phone) {
+    public Paciente(int id, String name, String lastName, String address, String phone, String image) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.address = address;
         this.phone = phone;
+        this.image=image;
     }
 
     public int getId() {
@@ -57,6 +59,14 @@ public class Paciente {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override

@@ -1,6 +1,6 @@
-package model.service;
+package cl.praxis.ProyectoHospitalPostPandemia.model.service;
 
-import model.dto.Paciente;
+import cl.praxis.ProyectoHospitalPostPandemia.model.dto.Paciente;
 
 import java.util.List;
 
