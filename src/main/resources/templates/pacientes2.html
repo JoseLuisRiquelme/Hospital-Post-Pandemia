@@ -7,10 +7,11 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<div class="container text-center">
+<div class="container">
     <h1>Listado de pacientes del hospital </h1>
     <div th:replace="~{menu::navega}"></div>
-    <div class="container text-center">
+    <div class="container">
+        <a th:href="@{/}" class="btn btn-primary m-3 text-center"><h8>Nuevo paciente</h8> <i class="fa-solid fa-circle-plus fa-lg"></i></a>
         <div class="row">
             <div th:each=" patient : ${pacientes}" class="col-4">
                 <div  class="card m-2 text-bg-secondary" style="width: 18rem;">
@@ -29,9 +30,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>s
     </div>
 </div>
+<script src="https://kit.fontawesome.com/d058062795.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
